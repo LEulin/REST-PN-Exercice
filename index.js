@@ -48,7 +48,7 @@ app.get('/recipes/:recipeId', function (req, res) {
 
 // Question 3 : As a manager you want to modify the selling price of only one recipe.
 // Create a HTTP Request :
-app.put('/recipes/:recipeId', function (req, res) {
+app.put('/recipes/:recipeId/:sellingPrice', function (req, res) {
     let recipeToModify = null;
     recipes.forEach(recipe => {
         if (recipe.id == req.params.recipeId) {
@@ -56,37 +56,38 @@ app.put('/recipes/:recipeId', function (req, res) {
             recipeToModify = recipe;
             return;
         }
-    });
-});
+        res.json(recipeToModify);
+    })
+})
 
-        // app.get('/recipes/:recipeId', function (req, res) {
-        //     const index = recipes.findIndex(el =>{
-        //         return el.id === req.params
-        //     })
-
-
-
-        // Question 4 : As a manager you want to delete one recipe from the recipes list
-        // Create a HTTP Request :
+    // app.get('/recipes/:recipeId', function (req, res) {
+    //     const index = recipes.findIndex(el =>{
+    //         return el.id === req.params
+    //     })
 
 
-        // Question 5 : As a manager you want to add a new recipe in the recipes list.
-        // Create a HTTP Request :
+
+    // Question 4 : As a manager you want to delete one recipe from the recipes list
+    // Create a HTTP Request :
 
 
-        // Question 6 : As a manager you want to get all the recipes which contains a special ingredients. 
-        // For example you want to know which recipe contains cheese.
-        // Create a HTTP Request :
+    // Question 5 : As a manager you want to add a new recipe in the recipes list.
+    // Create a HTTP Request :
 
 
-        // Question 7 : As a manager you want to get all the recipes' name. 
-        // For example he want to know which recipe contains cheese.
-        // Create a HTTP Request :
+    // Question 6 : As a manager you want to get all the recipes which contains a special ingredients. 
+    // For example you want to know which recipe contains cheese.
+    // Create a HTTP Request :
 
 
-        //
-        // End of the exercice
-        // ------------------------------
-        app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+    // Question 7 : As a manager you want to get all the recipes' name. 
+    // For example he want to know which recipe contains cheese.
+    // Create a HTTP Request :
+
+
+    //
+    // End of the exercice
+    // ------------------------------
+    app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 
